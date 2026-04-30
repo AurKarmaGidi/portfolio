@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Marika Guardi | Jr Web Dev</title>
   <meta name="description"
     content="Portfolio di Marika Guardi, junior web developer specializzata in HTML, CSS, SCSS, JavaScript, PHP, Laravel, Bootstrap, RxJS e Angular." />
@@ -15,23 +15,34 @@
     <div class="container nav">
       <a href="#home" class="logo">AurWebDev</a>
 
-      <nav>
-        <a href="#about" class="lang-it">Info</a>
-        <a href="#about" class="lang-en">About Me</a>
-        <a href="#skills" class="lang-it">Skills</a>
-        <a href="#skills" class="lang-en">Skills</a>
-        <a href="#portfolio" class="lang-it">Portfolio</a>
-        <a href="#portfolio" class="lang-en">Portfolio</a>
-        <a href="#contacts" class="lang-it">Contatti</a>
-        <a href="#contacts" class="lang-en">Contacts</a>
-      </nav>
+      <div class="header-right">
+        <nav id="mainNav">
+          <a href="#about" class="lang-it" onclick="closeMenu()">Info</a>
+          <a href="#about" class="lang-en" onclick="closeMenu()">About Me</a>
+          <a href="#skills" class="lang-it" onclick="closeMenu()">Skills</a>
+          <a href="#skills" class="lang-en" onclick="closeMenu()">Skills</a>
+          <a href="#portfolio" class="lang-it" onclick="closeMenu()">Portfolio</a>
+          <a href="#portfolio" class="lang-en" onclick="closeMenu()">Portfolio</a>
+          <a href="#contacts" class="lang-it" onclick="closeMenu()">Contatti</a>
+          <a href="#contacts" class="lang-en" onclick="closeMenu()">Contacts</a>
+        </nav>
 
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="it">
-          <img src="img/icons/italy.png" alt="Italiano" width="24" height="24">
-        </button>
-        <button class="lang-btn" data-lang="en">
-          <img src="img/icons/uk.png" alt="English" width="24" height="24">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="it">
+            <img src="img/icons/italy.png" alt="Italiano" width="24" height="24">
+          </button>
+          <button class="lang-btn" data-lang="en">
+            <img src="img/icons/uk.png" alt="English" width="24" height="24">
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
@@ -96,7 +107,7 @@
               reliable, attentive and tidy person.
               I am equally productive when working
               alone or as part of a team.
-              I’m highly motivated, quick to learn, and possess excellent problem-solving skills.
+              I'm highly motivated, quick to learn, and possess excellent problem-solving skills.
               I handle stressful situations well and I am
               not afraid to take on new challenges.</p>
           </div>
@@ -104,7 +115,7 @@
           <div class="about-card">
             <h3 class="lang-it">Formazione</h3>
             <h3 class="lang-en">Education</h3>
-            <p><strong>Accademia Code - Campus Digitale - 98/100</strong> <br /> 2024-2026 </p>
+            <p><strong>Accademia Code, Campus Digitale - 98/100</strong> <br /> 2024-2026 </p>
             <p><strong>Liceo Scientifico M. Cipolla</strong>
               <span class="lang-it">Diploma</span>
               <span class="lang-en">High School Diploma</span>
@@ -115,18 +126,36 @@
           <div class="about-card">
             <h3 class="lang-it">Lingue</h3>
             <h3 class="lang-en">Languages</h3>
-            <p><strong><span class="lang-it">Italiano:</span><span class="lang-en">Italian:</span></strong> <span
-                class="lang-it">Madrelingua</span><span class="lang-en">Native</span></p>
-            <p><strong><span class="lang-it">Inglese:</span><span class="lang-en">English:</span></strong> C1</p>
-            <p><strong><span class="lang-it">Spagnolo:</span><span class="lang-en">Spanish:</span></strong> B2</p>
-            <p><strong><span class="lang-it">Francese:</span><span class="lang-en">French:</span></strong> B1</p>
+            <div class="languages-grid">
+              <div class="language-item">
+                <span class="lang-label"><strong><span class="lang-it">Italiano:</span><span
+                      class="lang-en">Italian:</span></strong></span>
+                <span class="lang-level"><span class="lang-it">Madrelingua</span><span
+                    class="lang-en">Native</span></span>
+              </div>
+              <div class="language-item">
+                <span class="lang-label"><strong><span class="lang-it">Inglese:</span><span
+                      class="lang-en">English:</span></strong></span>
+                <span class="lang-level">C1</span>
+              </div>
+              <div class="language-item">
+                <span class="lang-label"><strong><span class="lang-it">Spagnolo:</span><span
+                      class="lang-en">Spanish:</span></strong></span>
+                <span class="lang-level">B2</span>
+              </div>
+              <div class="language-item">
+                <span class="lang-label"><strong><span class="lang-it">Francese:</span><span
+                      class="lang-en">French:</span></strong></span>
+                <span class="lang-level">B1</span>
+              </div>
+            </div>
           </div>
 
           <div class="about-card">
             <h3 class="lang-it">Competenze</h3>
             <h3 class="lang-en">Skills</h3>
             <p>
-              HTML, CSS, SCSS, JavaScript, TypeScript, <br>
+              HTML, CSS, SCSS, JavaScript, TypeScript,
               Bootstrap, RxJS, PHP, Laravel, Angular.
             </p>
             <p><strong><span class="lang-it">Strumenti:</span><span class="lang-en">Tools:</span></strong> GitHub,
@@ -139,43 +168,65 @@
 
             <div class="experience-grid">
               <div class="experience-column">
-                <p><strong>Italia</strong></p>
+                <p class="country-title">Italia</p>
 
-                <!-- Bar Manager -->
-                <p class="lang-it">· Bar Manager – B&B Service srl, Castelvetrano | 2015-2016 / 2022-2024</p>
-                <p class="lang-en">· Bar Manager – B&B Service srl, Castelvetrano | 2015-2016 / 2022-2024</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Bar Manager</div>
+                  <div class="experience-company">B&B Service srl, Castelvetrano</div>
+                  <div class="experience-date">2015-2016 / 2022-2024</div>
+                </div>
 
-                <!-- Operatore Tabacchi e Lotterie -->
-                <p class="lang-it">· Operatore Tabacchi e Lotterie – Casola Cristian srl, Castelvetrano | 2019-2022</p>
-                <p class="lang-en">· Tobacco Sales and Lottery Operator – Casola Cristian srl, Castelvetrano | 2019-2022
-                </p>
+                <div class="experience-item">
+                  <div class="experience-role">· Operatore Tabacchi e Lotterie</div>
+                  <div class="experience-company">Casola Cristian srl, Castelvetrano</div>
+                  <div class="experience-date">2019-2022</div>
+                </div>
 
-                <!-- Consulente Agenzia Viaggi -->
-                <p class="lang-it">· Consulente Agenzia Viaggi – Traccia la Meta, Santa Ninfa | 2014-2015</p>
-                <p class="lang-en">· Travel Agency Agent – Traccia la Meta, Santa Ninfa | 2014-2015</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Consulente Agenzia Viaggi</div>
+                  <div class="experience-company">Traccia la Meta, Santa Ninfa</div>
+                  <div class="experience-date">2014-2015</div>
+                </div>
 
-                <!-- Consulente Assicurativo -->
-                <p class="lang-it">· Consulente Assicurativo – Alleanza, Castelvetrano | 2013-2014</p>
-                <p class="lang-en">· Insurance Agent – Alleanza, Castelvetrano | 2013-2014</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Consulente Assicurativo</div>
+                  <div class="experience-company">Alleanza, Castelvetrano</div>
+                  <div class="experience-date">2013-2014</div>
+                </div>
 
-                <!-- Consulente Agenzia Immobiliare -->
-                <p class="lang-it">· Consulente Agenzia Immobiliare – Building srl, Castelvetrano | 2012-2013</p>
-                <p class="lang-en">· Real Estate Agent – Building srl, Castelvetrano | 2012-2013</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Consulente Agenzia Immobiliare</div>
+                  <div class="experience-company">Building srl, Castelvetrano</div>
+                  <div class="experience-date">2012-2013</div>
+                </div>
               </div>
 
               <div class="experience-column">
-                <p><strong>UK</strong></p>
-                <p class="lang-it">· Bar Manager – ZiCaffè ltd, London | 2018-2019</p>
-                <p class="lang-en">· Bar Manager – ZiCaffè ltd, London | 2018-2019</p>
+                <p class="country-title">UK</p>
 
-                <p class="lang-it">· Team Leader – The Willow Walk Wetherspoon, London | 2017-2018</p>
-                <p class="lang-en">· Team Leader – The Willow Walk Wetherspoon, London | 2017-2018</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Bar Manager</div>
+                  <div class="experience-company">ZiCaffè ltd, London</div>
+                  <div class="experience-date">2018-2019</div>
+                </div>
 
-                <p class="lang-it">· Bar Assistant – Caffè Nero, London | 2016</p>
-                <p class="lang-en">· Bar Assistant – Caffè Nero, London | 2016</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Team Leader</div>
+                  <div class="experience-company">The Willow Walk Wetherspoon, London</div>
+                  <div class="experience-date">2017-2018</div>
+                </div>
 
-                <p class="lang-it">· Bartender – Lockside Camden, London | 2016</p>
-                <p class="lang-en">· Bartender – Lockside Camden, London | 2016</p>
+                <div class="experience-item">
+                  <div class="experience-role">· Bar Assistant</div>
+                  <div class="experience-company">Caffè Nero, London</div>
+                  <div class="experience-date">2016</div>
+                </div>
+
+                <div class="experience-item">
+                  <div class="experience-role">· Bartender</div>
+                  <div class="experience-company">Lockside Camden, London</div>
+                  <div class="experience-date">2016</div>
+                </div>
               </div>
             </div>
           </div>
@@ -189,7 +240,7 @@
         <h2 class="lang-en">Skills</h2>
 
         <div class="skills-grid">
-          <div>
+          <div class="skills-column">
             <div class="skill-card">
               <span>HTML</span>
               <img src="img/skills/html.png" alt="HTML logo" />
@@ -216,7 +267,7 @@
             </div>
           </div>
 
-          <div>
+          <div class="skills-column">
             <div class="skill-card">
               <span>PHP</span>
               <img src="img/skills/php.png" alt="PHP logo" />
@@ -254,28 +305,35 @@
         <div class="projects-list">
           <!-- Progetto CodeX Streaming -->
           <div class="project-item">
+            <div class="project-image">
+              <img src="img/portfolio/codex-streaming.png" alt="CodeX Streaming anteprima">
+            </div>
             <div class="project-content">
               <h3>CodeX Streaming</h3>
               <p class="lang-it">Simulazione sito web di streaming online creato con Angular, Laravel e Bootstrap.</p>
-              <p class="lang-it">Testalo come amministratore con <strong>admin@codex.com</strong> o come utente con <strong>user@codex.com</strong> e la
-                password <strong>password123</strong> per vedere tutti i contenuti e le funzionalità.</p>
+              <p class="lang-it">Testalo come amministratore con <strong>admin@codex.com</strong> o come utente con
+                <strong>user@codex.com</strong> e la
+                password <strong>password123</strong> per vedere tutti i contenuti e le funzionalità.
+              </p>
 
               <p class="lang-en">Online streaming website simulation created with Angular, Laravel and Bootstrap.</p>
-              <p class="lang-en">Test it as admin with <strong>admin@codex.com</strong> or as user with <strong>user@codex.com</strong> and
-                using the password <strong>password123</strong> to access all content and features.</p>
+              <p class="lang-en">Test it as admin with <strong>admin@codex.com</strong> or as user with
+                <strong>user@codex.com</strong> and
+                using the password <strong>password123</strong> to access all content and features.
+              </p>
 
               <a href="https://www.aurwebdev.com" target="_blank" rel="noopener noreferrer" class="project-link">
                 <span class="lang-it">Apri sito web</span>
                 <span class="lang-en">Open website</span>
-              </a> 
-            </div> 
-            <div class="project-image">
-              <img src="img/portfolio/codex-streaming.png" alt="CodeX Streaming anteprima">
+              </a>
             </div>
           </div>
 
           <!-- Progetto Swipe Cleaner -->
           <div class="project-item">
+            <div class="project-image">
+              <img src="img/portfolio/swipe-cleaner.png" alt="Swipe Cleaner anteprima">
+            </div>
             <div class="project-content">
               <h3>Swipe Cleaner</h3>
               <p class="lang-it">App Android per pulizia galleria immagini con uno swipe</p>
@@ -295,29 +353,23 @@
                 </a>
               </div>
             </div>
-            <div class="project-image">
-              <img src="img/portfolio/swipe-cleaner.png" alt="Swipe Cleaner anteprima">
-            </div>
-
-
-
           </div>
 
-          <!-- Progetto CodeX Streaming -->
+          <!-- Progetto Business Websites Template -->
           <div class="project-item">
+            <div class="project-image">
+              <img src="img/portfolio/websites-template.png" alt="Business Websites Template anteprima">
+            </div>
             <div class="project-content">
               <h3>Business Websites Template</h3>
-              <p class="lang-it">Template per sito web adattabile a vari business <br> dark mode/light mode</p>
-              <p class="lang-en">Website template for different businesses</p>
+              <p class="lang-it">Template per sito web adattabile a vari business (dark mode/light mode)</p>
+              <p class="lang-en">Website template for different businesses (dark mode/light mode)</p>
 
               <a href="https://aurkarmagidi.github.io/websites-template/" target="_blank" rel="noopener noreferrer"
                 class="project-link">
                 <span class="lang-it">Apri sito web</span>
                 <span class="lang-en">Open website</span>
               </a>
-            </div>
-            <div class="project-image">
-              <img src="img/portfolio/websites-template.png" alt="Business Websites Template anteprima">
             </div>
           </div>
         </div>
@@ -334,10 +386,10 @@
             <img src="img/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
             LinkedIn
           </a>
-          <a href="https://instagram.com/aurwebdev" target="_blank" rel="noopener noreferrer">
+          <!-- <a href="https://instagram.com/aurwebdev" target="_blank" rel="noopener noreferrer">
             <img src="img/icons/instagram.svg" alt="Instagram" width="24" height="24">
             Instagram
-          </a>
+          </a> -->
           <a href="https://wa.me/393770948721" target="_blank" rel="noopener noreferrer">
             <img src="img/icons/whatsapp.svg" alt="WhatsApp" width="24" height="24">
             WhatsApp
@@ -361,6 +413,41 @@
   </footer>
 
   <script>
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    function toggleMenu() {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    }
+
+    function closeMenu() {
+      mainNav.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Close menu when clicking on links
+    document.querySelectorAll('#mainNav a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (event) {
+      const isClickInsideNav = mainNav && mainNav.contains(event.target);
+      const isClickOnMenuBtn = mobileMenuBtn && mobileMenuBtn.contains(event.target);
+
+      if (mainNav && mainNav.classList.contains('active') && !isClickInsideNav && !isClickOnMenuBtn) {
+        closeMenu();
+      }
+    });
+
     // Language switcher
     document.addEventListener('DOMContentLoaded', function () {
       const langBtns = document.querySelectorAll('.lang-btn');
