@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <!-- HEADER FISSO IN ALTO - position:fixed lo mantiene sempre visibile durante lo scroll -->
   <header class="header">
     <div class="container nav">
       <a href="#home" class="logo">AurWebDev</a>
@@ -49,6 +50,7 @@
   </header>
 
   <main>
+    <!-- La sezione hero non ha più bisogno di min-height:100vh perché ora c'è padding-top sul body -->
     <section id="home" class="hero">
       <div class="container hero-content">
         <div class="hero-text">
@@ -386,10 +388,6 @@
             <img src="img/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
             LinkedIn
           </a>
-          <!-- <a href="https://instagram.com/aurwebdev" target="_blank" rel="noopener noreferrer">
-            <img src="img/icons/instagram.svg" alt="Instagram" width="24" height="24">
-            Instagram
-          </a> -->
           <a href="https://wa.me/393770948721" target="_blank" rel="noopener noreferrer">
             <img src="img/icons/whatsapp.svg" alt="WhatsApp" width="24" height="24">
             WhatsApp
@@ -413,32 +411,37 @@
   </footer>
 
   <script>
-    // Mobile menu functionality
+    // ============================================
+    // MENU MOBILE - Gestisce l'apertura/chiusura del menu su dispositivi mobili
+    // ============================================
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
 
+    // Apre/chiude il menu mobile
     function toggleMenu() {
       mainNav.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
       document.body.classList.toggle('menu-open');
     }
 
+    // Chiude il menu mobile
     function closeMenu() {
       mainNav.classList.remove('active');
       mobileMenuBtn.classList.remove('active');
       document.body.classList.remove('menu-open');
     }
 
+    // Event listener per il pulsante del menu mobile
     if (mobileMenuBtn) {
       mobileMenuBtn.addEventListener('click', toggleMenu);
     }
 
-    // Close menu when clicking on links
+    // Chiude il menu quando si clicca su un link
     document.querySelectorAll('#mainNav a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Close menu when clicking outside
+    // Chiude il menu quando si clicca all'esterno
     document.addEventListener('click', function (event) {
       const isClickInsideNav = mainNav && mainNav.contains(event.target);
       const isClickOnMenuBtn = mobileMenuBtn && mobileMenuBtn.contains(event.target);
@@ -448,17 +451,19 @@
       }
     });
 
-    // Language switcher
+    // ============================================
+    // LANGUAGE SWITCHER - Gestisce il cambio lingua italiano/inglese
+    // ============================================
     document.addEventListener('DOMContentLoaded', function () {
       const langBtns = document.querySelectorAll('.lang-btn');
       const htmlElement = document.documentElement;
 
-      // Set initial language from localStorage or default to 'it'
+      // Imposta la lingua iniziale dal localStorage o default 'it'
       const savedLang = localStorage.getItem('selectedLanguage') || 'it';
       htmlElement.setAttribute('data-lang', savedLang);
       htmlElement.lang = savedLang;
 
-      // Update active button
+      // Aggiorna il pulsante attivo
       langBtns.forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.lang === savedLang) {
@@ -466,23 +471,35 @@
         }
       });
 
-      // Add click event to buttons
+      // Aggiunge evento click ai pulsanti lingua
       langBtns.forEach(btn => {
         btn.addEventListener('click', function () {
           const lang = this.dataset.lang;
 
-          // Update HTML lang attribute
+          // Aggiorna l'attributo lang dell'HTML
           htmlElement.setAttribute('data-lang', lang);
           htmlElement.lang = lang;
 
-          // Update active button
+          // Aggiorna il pulsante attivo
           langBtns.forEach(b => b.classList.remove('active'));
           this.classList.add('active');
 
-          // Save to localStorage
+          // Salva la scelta nel localStorage
           localStorage.setItem('selectedLanguage', lang);
         });
       });
+    });
+
+    // ============================================
+    // NAVBAR FISSA - Effetto scroll (cambia sfondo quando si scorre)
+    // ============================================
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
   </script>
 </body>
