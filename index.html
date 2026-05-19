@@ -117,12 +117,25 @@
           <div class="about-card">
             <h3 class="lang-it">Formazione</h3>
             <h3 class="lang-en">Education</h3>
-            <p><strong>Accademia Code, Campus Digitale - 98/100</strong> <br /> 2024-2026 </p>
+
             <p><strong>Liceo Scientifico M. Cipolla</strong>
-              <span class="lang-it">Diploma</span>
-              <span class="lang-en">High School Diploma</span>
-              2012
+              <p class="lang-it">Diploma - 2012</p>
+              <p class="lang-en">High School Diploma - 2012</p>
             </p>
+
+            <br>
+
+            <p><strong>Accademia Code, Campus Digitale - 98/100</strong>
+              <p>2024-2026</p>
+            </p>
+
+            <div class="education-item">
+              <a href="cv/AttestatiCode.pdf" download class="btn-cert">
+                <img src="img/icons/download.svg" alt="Download" width="16" height="16">
+                <span class="lang-it">Scarica certificato</span>
+                <span class="lang-en">Download certificate</span>
+              </a>
+            </div>
           </div>
 
           <div class="about-card">
@@ -493,7 +506,7 @@
     // ============================================
     // NAVBAR FISSA - Effetto scroll (cambia sfondo quando si scorre)
     // ============================================
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const header = document.querySelector('.header');
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
