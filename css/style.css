@@ -630,6 +630,64 @@ a {
 }
 
 /* ============================================ */
+/* BOTTONE CERTIFICATO FORMAZIONE */
+/* ============================================ */
+.education-item {
+  display: flex;
+  flex-wrap: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.education-item p {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.btn-cert {
+  width: 180px;
+  background: var(--accent);
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn-cert:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-cert img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 480px) {
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btn-cert {
+    white-space: normal;
+  }
+}
+
+/* ============================================ */
 /* FOOTER */
 /* ============================================ */
 .footer {
